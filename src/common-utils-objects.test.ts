@@ -7,7 +7,7 @@ describe('Common utils objects', () => {
         simplePropNull: null,
         simplePropUndefined: undefined,
         simplePropString: 'string',
-        simplePropNumner: 999,
+        simplePropNumber: 999,
       };
       const objectWithComplexProps = {
         ...objectWithSimpleProps,

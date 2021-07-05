@@ -54,11 +54,11 @@ export const waitFor = <R>(
   timeoutMs = 360000
 ): Promise<R> => {
   return new Promise((res, rej) => {
-    let timeout: NodeJS.Timer | undefined;
-    let checkInterval: NodeJS.Timeout | undefined;
+    let timeout: number | NodeJS.Timer | undefined;
+    let checkInterval: NodeJS.Timeout | number | undefined;
     const clearTimers = () => {
-      checkInterval && clearInterval(checkInterval);
-      timeout && clearTimeout(timeout);
+      checkInterval && clearInterval(checkInterval as NodeJS.Timer);
+      timeout && clearTimeout(timeout as NodeJS.Timer);
       checkInterval = undefined;
       timeout = undefined;
     };
